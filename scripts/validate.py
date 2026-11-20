@@ -49,6 +49,12 @@ def main() -> int:
     if not (SKILL / "SKILL.md").is_file():
         fail(SKILL, "main SKILL.md is missing")
 
+    license_path = SKILL / "LICENSE"
+    repository_license = ROOT / "LICENSE"
+    if (not license_path.is_file() or not repository_license.is_file()
+            or license_path.read_bytes() != repository_license.read_bytes()):
+        fail(license_path, "installable skill must carry the repository's license notice")
+
     for path in skills:
         match = FRONTMATTER.match(path.read_text(encoding="utf-8"))
         if not match:
@@ -125,7 +131,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}", file=sys.stderr)
         return 1
-    print(f"PASS: {len(skills)} skills, {links} relative file links, reachable instructions, and UI metadata.")
+    print(f"PASS: {len(skills)} skills, {links} relative file links, reachable instructions, UI metadata, and license.")
     print("External URLs, heading anchors, assistant behavior, and live providers are not tested by this check.")
     return 0
 

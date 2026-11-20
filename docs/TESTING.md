@@ -14,7 +14,7 @@ python3 -m venv .venv
 
 On Windows, replace `.venv/bin/python` with `.venv\Scripts\python.exe`.
 
-The validator checks skill metadata and unique names, relative Markdown file links, reachability of bundled instructions from the main skill, and UI metadata. GitHub Actions runs the same check. It does not check external URLs, execute apps, or call providers.
+The validator checks skill metadata and unique names, relative Markdown file links, reachability of bundled instructions from the main skill, UI metadata, and the license notice included in the installable folder. GitHub Actions runs the same check. It does not check external URLs, execute apps, or call providers.
 
 The Codex skill-creator validator was also run against each `SKILL.md` during preparation. It is bundled with Codex rather than vendored here.
 

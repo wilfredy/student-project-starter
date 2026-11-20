@@ -1,5 +1,6 @@
 ---
 name: student-project-starter
+license: MIT
 description: Guide a student from a project idea through yes/no discovery, a reviewed tech stack, one copyable setup prompt, and optional hands-on project setup with environment configuration and a beginner handoff. Use for choosing and starting a new student app or automation project.
 ---
 
