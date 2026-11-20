@@ -1,0 +1,4 @@
+interface:
+  display_name: "Student Project Starter"
+  short_description: "Choose a stack and launch your first project"
+  default_prompt: "Use $student-project-starter to guide me from my project idea to an approved tech stack and a runnable starter."
